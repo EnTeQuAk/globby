@@ -1,0 +1,29 @@
+0.1dev:
+(released)
+    - initial release only with some minor features
+
+0.2dev:
+(codename Schabrakentapir - unreleased)
+    - daucms is now known as Globby
+    - rewritten the FileParser
+    - added a better unicode handling
+    - added a log-functionality (and rewritten again ;) )
+    - added a new menue structure (NOTE: it's *not* backwards compatible)
+    - compleatly rewritten the Command Line Interface
+    - fixed a few bugs while file handling
+    - added much more CLI-Options:
+        - '-a' or '--accept_all', if Globby shouldn't ask everytime for 'yes' or 'no'
+        - '--suffix', if your project files have another suffix except 'txt'
+        - --debug' or '-d', if you want to debug Globby.
+        - '--syntax', to change the SyntaxProcessor (for more details see the documentation)
+        - '--charset' or '-c', to change the charset, for **in and output**
+        and some minor...
+    - added more Markup Processors(next to the standard, 'woxt', we support:
+        - Textile
+        - Markdown
+        - reStructedText
+        (NOTE: every one will need it's own libary!)
+
+    - much more internal fixes and code clean ups
+    - added much more formatting features to the Woxt-Markup
+    - Globby is now mostly modularized.

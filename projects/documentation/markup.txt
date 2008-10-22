@@ -1,0 +1,210 @@
+= Das Globby-Markup (Woxt) =
+
+Globby bietet eine speziell an dessen Einsatzgebiet angepasste Markup-Sprache, //Woxt//, an.
+Sollte diese Sprache nicht gefallen so können auch die folgenden benutzt werden:
+ * [http://daringfireball.net/projects/markdown/ Markdown]
+ * [http://docutils.sourceforge.net/rst.html reStructedText]
+ * [http://textism.com/tools/textile/?sample=2 Textile]
+
+**Beachte:**
+Wenn eine der oberen Markup-Sprachen (Markdown, reST, Textile) benuzt werden soll **muss**
+die entsprechende Bibliothek installiert sein. Dazu kann es schon ausreichen, die Bibliothek in
+den ``utils`` Ordner zu verschieben.
+(weiteres, siehe Globby Hilfe ``--help``)
+
+Sollten weitere Markup-Sprachen gewünscht werden so sind wir jederzeit bereit entsprechende zu implementieren.
+BBCode und die komplette MoinMoin Syntax sind bereits in Arbeit.
+
+
+== Überschriften ==
+
+Damit der Text strukturiert werden kann gibt es die Möglichkeit Globby zu sagen, was eine Überschrift ist.
+Man umrandet dazu den Text, der die Überschrift darstellen soll mit einem Gleichheitszeichen, jeweils auf der linken und rechten Seite.
+
+{{{#woxt
+= lustige Überschrift =
+}}}
+
+Hierbei muss beachtet werden, dass die Überschrift nur erkannt wird, wenn sie am **Zeilenanfang** steht.
+
+
+Anmerkung:
+ * Für die Lesbarkeit empfielt es sich ein Leerzeichen zwischen dem Gleichheitszeichen und dem Text zu setzten. Dieses wird im späteren Text **nicht** dargestellt. (Weitere Leerzeichen werden jedoch ordnungsgemäß angezeigt)
+
+
+Um nun Kapitel und Unterkapitel von einander zu trennen werden anstelle des einfachen Gleichheitszeichen mehrere verwendet:
+
+{{{#woxt
+= Kapitel =
+== Unterkapitel ==
+= Kapitel =
+== Unterkapitel ==
+=== Unter-Unterkapitel ===
+==== Ebene 4 ====
+===== Ebene 5 =====
+====== Ebene 6 ======
+}}}
+Das sieht dann so aus:
+#image[headlines.png Beispiel Überschriften]
+
+**Anker**
+Hinter jeder Überschrift wird ein Anker eingefügt. Er wird sichtbar, sobald man mit der Maus über die Überschrift fährt.
+Man kann jedoch auch einen eigenen Ankerlink definieren. Es wird nach dem folgenden Muster realisiert:
+{{{#woxt
+=== Überschrift === #ankername
+}}}
+So wird ein Anker mit dem Namen ``ankername`` erzeugt.
+
+
+== fetter-, schräger- und unterstrichener Text ==
+
+Globby unterstützt natürlich auch grundlegende Textformatierungen, wie:
+{{{#woxt
+**fetter Text**
+//schräger Text//
+__unterstrichener Text__
+}}}
+
+Das sieht dann so aus:
+
+** fetter Text **
+//schräger Text//
+__unterstrichener Text__
+
+
+== Weitere Textformatierungen ==
+
+Globby unterstützt neben den obigen auch noch folgende weitere:
+{{{#woxt
+~~ durchgestricherer ~~ Text
+^^hochgestellter^^ Text
+,,tieftestellter,, Text
+``monospaced`` Text
++~großer~+ Text
+-~kleiner~- Text
+}}}
+Das sieht wiederum so aus:
+
+~~ durchgestricherer ~~ Text
+^^hochgestellter^^ Text
+,,tieftestellter,, Text
+``monospaced`` Text
++~großer~+ Text
+-~kleiner~- Text
+
+
+== Links ==
+
+Natürlich gehören Links zu einer Website. Deshalb kann Globby auch Links erstellen. Oder besser gesagt kennt dafür eine besondere Schreibweise.
+Für Globby besteht ein Link aus 2 Teilen.
+Einem Namen, der später im Text erscheint und anklickbar ist, sowie dem wirklichen Link.
+
+Als Beispiel:
+ * Linkname: klickmich
+ * Der Link selbst: !http://www.toller-link.de
+
+{{{#woxt
+[http://www.toller-link.de klickmich]
+}}}
+Das sieht dann im Text so aus: [http://www.toller-link.de klickmich]
+
+Wie man sieht, wird der Link einfach in eckige Klammern geschrieben.
+
+
+== Interne Links ==
+
+Interne Links sind Verweise auf Unterseiten innerhalb der Internetseite. Sie können z.B. genutzt werden, um zu einem bestimmten Thema eine genauere Beschreibung bereitzustellen. **Ohne** diese Unterseite ins Menü zu stellen.
+Interne Links werden genauso definiert wie normale Links, mit einem Unterschied, //der Linkname//.
+
+Um es an einem Beispiel zu erleutern:
+{{{#woxt
+[exakter_Seitenname angezeigter_Linktext]
+}}}
+Wie man sieht, ist der interne Link ebenfalls in zwei Teile aufgeteilt. Die Reihenfolge ist genau die gleiche, das erste Wort entspricht dem Ziel des Verweises und alles, was danach kommt, gilt als Beschreibung.
+Der Linkname (in dem Beispiel ``exakter_Seitenname``), ist der Name auf die Unternseite.
+ In diesem Beispiel muss also im Projektordner eine Datei namens ``exakter_Seitenname.txt`` existieren, damit der Verweis erfolgreich angewendet werden kann.
+Später wird der Link dann auf eine Unterseite verweisen.
+
+
+== Listen ==
+
+Globby beherrscht natürlich auch die Darstellung von Listen.
+{{{#woxt
+ * Eie erste Ebene
+  * Ein Unterthema weiter eingerückt
+  * ein weiteres Unterthema. Mit einem wirklich langen Satz, der ganz bestimmt nicht in eine Zeile passt, nur um zu zeigen, wie das dann später mal aus sieht. 
+ * Wieder zurück auf der Hauptebene
+  * Eingerückt
+   * Weiter eingerückt
+    * Noch weiter eingerückt
+}}}
+Das sieht dann so aus:
+
+ * Eie erste Ebene
+  * Ein Unterthema weiter eingerückt
+  * ein weiteres Unterthema. Mit einem wirklich langen Satz, der ganz bestimmt nicht in eine Zeile passt, nur um zu zeigen, wie das dann später mal aus sieht. 
+ * Wieder zurück auf der Hauptebene
+  * Eingerückt
+   * Weiter eingerückt
+    * Noch weiter eingerückt
+    
+Eine Listenzeile wird von einem Leerzeichen, gefolgt von dem Zeichen für eine Multiplikation ``*`` gekennzeichnet. Wenn eine Unterebene dargestellt werden soll fügt man vor dem Multiplikationszeichen weitere Leerzeichen ein. Wobei jedes weitere Zeichen eine Enrückung um eine weitere Ebene definiert. 
+
+
+== Macros ==
+
+Macros sind spezielle Befehle, die eine Internetseite stark beeinflussen können. In Globby sind es unter anderem Befehle, die Bilder kopieren oder weitere Zeilenumbrüche einfügen.
+
+Die Macros in Globby folgen einem einheitlichen Darstellungsmuster:
+{{{#woxt
+#macroname[argumente]
+}}}
+Nach der Raute kommt also der Name des Macros. Danach die einzelnen Argumente, die von Macro zu Macro unterschiedlich sein können.
+
+Nun werden wir genauer auf die Macros eingehen, die Globby bereitstellt:
+
+
+=== Bilder ===
+
+An folgendem Beispiel sei die Darstellungsweise für Bilder erklärt.
+{{{#woxt
+#image[http://www.python.org/images/python-logo.gif Alt-Text des Bildes]
+}}}
+
+Die Syntax ähnelt einfachen Links. 
+Ist der Pfad (das erste Argument, in diesem Fall der Link) ein absoluter Pfad, wird das Bild automatisch in den Ordner ``globby/PROJEKTNAME/rendered`` reinkopiert und der Verweis entsprechend geändert.
+So ist es möglich später den Ordner einfach hochzuladen, ohne lange im HTML-Quelltext die Links auf die einzelnen Bilder zu ändern.
+Das zweite Argument (die Argumente werden wieder mit Leerzeichen getrennt), ist die Beschreibung des Bildes, sollte es mal nicht darstellbar sein.
+
+Obiges Beispiel bringt also folgendes Bild zum Vorschein:
+
+#image[http://www.python.org/images/python-logo.gif Alt-Text des Bildes]
+
+
+=== Zeilenumbrüche ===
+
+Globby erzeugt Zeilenumbrüche innerhalb der HTML-Seiten genau dort, wo auch in den Textdateien welche sind.
+Dadurch unterscheidet sich Globby von den meisten anderen Wikis.
+
+Wenn man trotzdem mal mehrere Zeilenumbrüche hintereinander benötigt und in der Quelldatei keine Vorfinden möchte, gibt es eine Möglichkeit diese über ein Macro einzufügen.
+Das Macro heißt ``br`` und benötigt **keine Argumente**.
+Es wird wiefolgt eingefügt:
+
+{{{#woxt
+#br[]
+}}}
+
+Dieses Macro erzeugt einen einfachen Zeilenumbruch, in HTML-Quellcode ausgedrückt ``<br />``.
+
+
+=== Kommentare ===
+
+Kommentare sind ebenfalls über Macros realisiert. Sie werden wiefolgt erzeugt:
+{{{#woxt
+#comment[Hier steht das Kommentar]
+}}}
+Dieses Macro wird später nicht sichtbar sein. Nur im HTML-Quelltext wird ein Kommentar zu sehen sein, nach dem folgendem Muster:
+{{{#html
+<!-- Hier steht das Kommentar -->
+}}}
+

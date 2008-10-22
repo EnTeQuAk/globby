@@ -1,0 +1,8 @@
+index "Start"
+"Dokumentation"
+preface "Algemeines"
+ markup "Formatierungen"
+ how_to_use "Globby benutzen"
+"Sonstiges"
+download "Download"
+todo "ToDo"

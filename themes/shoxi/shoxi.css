@@ -1,0 +1,154 @@
+
+/* -- serveral things -- */
+body {
+    color: #000000;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 2%;
+    font-size: 1em;
+    font-family: verdana, arial, sans-serif;
+}
+
+a {
+    color: #aa0000; text-decoration: underline;
+}
+a:visited {
+    color: #000000;
+}
+a:hover {
+    background-color: #ffd4d7;
+}
+
+/*
+ ###############################################
+ * TODO: uncomment if we add an Gallery Macro.
+ *       Because it's not that nice in sections
+ *       we don't want to have that styles.
+ *       If uncomment, move it to `.gallery`
+ *       or something similar.
+ ###############################################
+
+img {
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+    padding: 5px;
+    margin: 10px;
+}
+img:hover {
+    border-color: #72bf00;
+    background-color: #c3ff6a;
+    opacity: 0.9;
+}*/
+
+h1 {
+    font-size: 3em;
+    line-height: 1em;
+    padding: 20px 0 5px 15px;
+    margin: 0;
+    border-bottom: 1px dashed #aa2200;
+    color: #aa2200;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+h2, h3, h4, h5, h6 {
+    color: #aa2200;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/* heading anchors */
+.anchor:link, .anchor:visited {
+    border: none;
+    color: #d7d7d7;
+    font-size: 0.8em;
+    vertical-align: text-top;
+}
+* > .anchor:link, * > .anchor:visited {
+    visibility: hidden;
+}
+h1:hover .anchor, h2:hover .anchor, h3:hover .anchor,
+h4:hover .anchor, h5:hover .anchor, h6:hover .anchor {
+    visibility: visible;
+    background-color: #ffffff;
+}
+
+/* source code boxes */
+.code {
+    margin: 10px 5px;
+    padding: 10px 10px 10px 30px;
+    border: 1px solid #000000;
+    background-color: #fffde9;
+}
+.code:hover {
+    border: 1px solid #aa2200;
+}
+tt {
+    font-size: 1em;
+}
+
+/* -- Layout spezific things -- */
+#container {
+    font-size: 0.8em;
+    margin: auto;
+    border-left: 1px solid #2a0800;
+    border-right: 1px solid #2a0800;
+    border-bottom: 1px solid #2a0800;
+}
+
+#navigation {
+    width: 26%;
+    float: right; 
+    padding: 70px 0 50px 0;
+    margin: 1em;
+    border-bottom: 1px dotted #942700;
+    border-left: 1px dotted #942700;
+    font-size: 0.9em; 
+}
+#navigation a {
+    display: block;
+    color: #000000;
+    font-size: 130%;
+    text-decoration: none;
+    margin: 2px;
+    padding-left: 5px;
+    background-color: #efefef;
+    border: 1px solid #d3d3d3;
+}
+#navigation a:hover {
+    background-color: #e3e3e3;
+    border: 1px solid #aaaaaa;
+}
+
+#navigation img {
+    border: none;
+}
+#navigation ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    list-style-position: inside;
+}
+#navigation li {
+    margin: 1px 5px 1px 10px;
+    padding: 3px 0px 3px 5px;
+    border-left: 1px dotted #ffcd6a;
+}
+#navigation .menue_section {
+    font-size: 1.5em;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding: 0.5em;
+    margin-bottom: 0.2em;
+    border-bottom: 1px dotted #aaa;
+}
+
+#content {
+    padding: 10% 30% 5% 2%; 
+    line-height: 1.5em;
+}
+
+#footer {
+    clear: both;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    border: 1px dotted #aaa;
+    font-size: 0.8em;
+}

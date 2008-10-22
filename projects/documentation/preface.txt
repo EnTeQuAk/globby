@@ -1,0 +1,61 @@
+= Allgemeines =
+
+== Warum wurde Globby ins Leben gerufen? ==
+Es gibt so viele Projekte, die auf unterschiedlichste Art eine Internetseite erzeugen. 
+Also warum noch eines?
+
+Das Kernkonzept von Globby sieht eine grafische Oberfläche vor. Worüber das Erstellen und Warten einer Internetseite möglich ist.
+Nun das ist noch immer nicht sonderlich spektakulär.
+
+Der Clou liegt darin, dass Globby sich wirklich aufs Wesentliche beschränkt. Wirklich jeder, der in der Lage ist Text in einen Editor zu tippen wird in der Lage sein mit Globby eine Internetseite zu erstellen. Man braucht keinerlei Kenntnisse in HTML, CSS.
+
+Globby muss nicht einmal installiert werden. Einfach entpacken und los geht es.
+
+Für diejenigen, die sich etwas auskennen oder einarbeiten bietet Globby weitergehende Möglichkeiten.
+
+
+
+== Was macht das Erstellen einer Internetseite so kompliziert? ==
+
+Man braucht mindestens Grundlagenwissen zu folgenden Themenkomplexen:
+ * Texte verfassen
+  * in Unterkapitel/Seiten aufteilen
+  * Menü (Inhaltsverzeichnis) erstellen, damit auch alle erstellten Seiten für den Leser erreichbar sind
+ * Layout / Design / Farben / Schriften
+ * programmieren bzw. designen der Internetseite
+ * Die Seite überhaupt ins Netz stellen
+
+
+== Wie hilft Globby bei der Erstellung einer Webseite? ==
+
+=== Texte verfassen ===
+
+Beim Verfassen von Texten kann Globby natürlich nicht helfen.
+Globby kann Texte auch nicht in eine logische Struktur bringen. Das ist und bleibt zum Glück die Aufgabe eines Autors, der Person, die die Internetseite betreut.
+
+Globby kann hier nur indirekt helfen, indem es die entsprechenden Personen unterstützt.
+Es kümmert sich nämlich darum einen verfassten Text für das Internet aufzubereiten, damit der Autor seine Zeit damit verbringen kann den eigentlichen Text zu verfassen, zu korrigieren, Bilder einzufügen und vieles mehr.
+
+Dazu bedient sich globby einer Idee, durch die [http://de.wikipedia.org/wiki/Wiki Wikis] beziehungsweise die Systeme dahinter, populär geworden sind.
+Das heißt, im Grunde wird simpler Text geschrieben, der jedoch mit verschiedenen Zeichen strukturiert wird.
+Der Autor benötigt keine Kenntnisse in einer größeren Beschreibungssprache, wie (X)HTML oder gar XML.
+
+Ein weiterer Vorteil liegt darin, dass die Dateien, die bearbeitet werden reine Textdateien sind und mit jedem Texteditor bearbeitet werden können.
+
+So kann man sich beim Schreiben wirklich darauf konzentrieren Texte zu verfassen, während man zB. bei großen Textverarbeitungsprogrammen ständig dazu verleitet wird schon beim Formulieren auch gestalterisch tätig zu werden.
+Erfahrungsgemäß wird viel Zeit darauf verwendet bzw. verschwendet, den Text in jeder Entwicklungsphase einem gefälligem Aussehen anzupassen.
+
+Das ist der Grund, weswegen das Verfassen eines Textes bei Globby von dessen grafischer Aufbereitung getrennt wird.
+Das Aussehen wird in Globby mit sogenannten Themes geregelt. Dies sind einfache HTML-Dateien mit CSS Stylesheets.
+Globby bringt einige vorgefertigte Styles mit, es ist aber auch sehr einfach eigene zu definieren, da Globby hier kaum Abstriche macht.
+
+
+=== Menü erstellen ===
+Natürlich benötigt eine Internetseite auch ein entsprechendes Menü, eine Navigation.
+Dieses lässt sich mit Globby sehr einfach erstellen. siehe //[how_to_use Wie benutze ich Globby]//
+
+
+=== Ins Internet stellen ===
+Globby wird später die Möglichkeit bieten, Projekte auf einen entfernten Webserver/Webspace hochzuladen.
+Hierzu werden Protokolle wie FTP, SFTP, SSH, Telnet unterstützt.
+//(zZ noch nicht implementiert)//

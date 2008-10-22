@@ -1,0 +1,357 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-08-19 17:08+0200\n"
+"PO-Revision-Date: 2007-07-25 13:38+0100\n"
+"Last-Translator: Christopher Grebs <chrissiG@gmx.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: globby.py:68
+msgid "Set the value for the name of the project"
+msgstr "Übergebe den Projektnamen an"
+
+#: globby.py:78
+msgid "Set the name of the theme"
+msgstr "Übergebe den Themenamen"
+
+#: globby.py:86
+msgid "The suffix of the files in \"globby/projects/PROJECT/\""
+msgstr "Der Suffix von allen Dateien in \"globby/projects/PROJEKT/\""
+
+#: globby.py:95
+msgid "Set automaticly the following vars:"
+msgstr "The folgenden Variablen werden automatisch gesetzt:"
+
+#: globby.py:96
+msgid "theme: default"
+msgstr "design: default"
+
+#: globby.py:97
+msgid "project:  debug"
+msgstr "projekt: debug"
+
+#: globby.py:98
+msgid "accept_all: True"
+msgstr "alles bestätigen: Ja"
+
+#: globby.py:108
+msgid "Define the charset for the generated HTML-Files"
+msgstr "Gebe den Zeichensatz aller generierten HTML Dateien an"
+
+#: globby.py:117
+msgid "Choose a markup, witch to use for rendering the project"
+msgstr "Wähle eine Beschreibungs-Sprache um dein Projekt zu verarbeiten"
+
+#: globby.py:118
+msgid "(it defaults to 'woxt')"
+msgstr "(standard ist 'woxt')"
+
+#: globby.py:119 globby.py:178
+#, python-format
+msgid "choose one of: %s"
+msgstr "währe eines von: %s"
+
+#: globby.py:126
+msgid "Choose the Builder wich generates your output."
+msgstr ""
+
+#: globby.py:127
+#, fuzzy
+msgid "(it defaults to 'project2html')"
+msgstr "(standard ist 'woxt')"
+
+#: globby.py:128
+#, fuzzy, python-format
+msgid "Choose one of: %s"
+msgstr "währe eines von: %s"
+
+#: globby.py:140
+msgid "accept all queries"
+msgstr "akzeptiere alle aufkommenden Fragen"
+
+#: globby.py:149
+msgid "set a specific language"
+msgstr "währe eine Sprache"
+
+#: globby.py:158
+msgid "show this help message and exit"
+msgstr "Zeige diese Hilfe und beende Globby"
+
+#: globby.py:167
+msgid "show the program's version number and exit"
+msgstr "Zeigt die Versionsnummer von Globby und beendet es"
+
+#: globby.py:176
+msgid "If you're using Pygments, choose here the used style"
+msgstr "Wenn Pygments benutzt wird, bitte hier den benutzten Style auswählen"
+
+#: globby.py:177
+msgid "(defaults to 'default')"
+msgstr "(standart ist 'default')"
+
+#: globby.py:188
+msgid "python globby.py [options]"
+msgstr "python globby.py [optionen]"
+
+#: globby.py:210
+msgid "Please validate all given options:"
+msgstr "Bitte kontrolliere alle angegebenen Optionen:"
+
+#: globby.py:212
+msgid ""
+"You've entered the following options.\n"
+"Globby will use them to render the project:"
+msgstr ""
+"Die folgenden Optionen wurden eingegeben.\n"
+"Globby wird sie benutzen um das Projekt korrekt zu verarbeiten:"
+
+#: globby.py:215
+msgid "option"
+msgstr "Option"
+
+#: globby.py:215
+msgid "value"
+msgstr "Wert"
+
+#: globby.py:218
+msgid "not given or set"
+msgstr "nicht angegeben"
+
+#: globby.py:221
+msgid ""
+"\n"
+"If all Values are correct, type \"y\" to generate your page"
+msgstr ""
+"\n"
+"Wenn alle Werte richtig sind, bitte \"j\" zum generieren der Seite eingeben"
+
+#: globby.py:222
+msgid "otherwise type \"n\" to abort (NOTE: it aborts on any key except \"y\")"
+msgstr ""
+"Andererseits bitte \"n\" zum abbrechen. (Beachte, das Globby bei jeder "
+"Eingabe au�r \"j\" abbricht)"
+
+#: globby.py:224
+msgid "Run parser? (y|n): "
+msgstr "Globby ausf� (j/n): "
+
+<<<<<<< .mine
+#: globby/environment.py:131
+=======
+#: globby/builder.py:83
+>>>>>>> .r343
+#, python-format
+<<<<<<< .mine
+msgid "%(project)s allready exists"
+msgstr "%(project)s existiert schon"
+
+#: globby/environment.py:135
+#, python-format
+msgid ""
+"#This menue file was automaticly generated for the project \"%(project)s\""
+msgstr ""
+"# Diese Datei wurde automatisch für das Projekt \"%(project)s\" erstellt"
+
+#: globby/environment.py:147
+#, python-format
+msgid "%(project)s not found"
+msgstr "%(project)s wurde nicht gefunden"
+
+#: globby/environment.py:151
+#, python-format
+msgid "%(project)s is the choosen project. You can't delete it"
+msgstr ""
+
+#: globby/builder.py:83
+#, python-format
+=======
+>>>>>>> .r343
+msgid "created ...%s"
+msgstr "%s wurde erstellt"
+
+#: globby/builder.py:87
+#, python-format
+msgid "I'll overwrite %s"
+msgstr "%s wird �hrieben"
+
+#: globby/builder.py:89
+#, fuzzy
+msgid "reading CSS-Data..."
+msgstr "lese CSS Daten"
+
+#: globby/builder.py:101
+#, fuzzy, python-format
+msgid "reading datafile %(fn)s ..."
+msgstr "lese Datei %(fn)s.%(suffix)s ..."
+
+#: globby/builder.py:110
+#, fuzzy, python-format
+msgid "parsing datafile %(fn)s..."
+msgstr "verarbeite Datei %(fn)s.%(suffix)s..."
+
+#: globby/builder.py:117
+#, python-format
+msgid "rendering data with the choosen theme \"%s\""
+msgstr "verarbeite Daten mit dem ausgew�ten Design \"%s\""
+
+#: globby/builder.py:133
+#, python-format
+msgid "writing rendered data to %s"
+msgstr "schreibe verarbeitete Daten nach %s"
+
+#: globby/builder.py:151
+msgid "write CSS-Data"
+msgstr "schreibe CSS Daten"
+
+#: globby/builder.py:159
+msgid ""
+"All done!\n"
+"\n"
+msgstr ""
+"Fertig!\n"
+"\n"
+
+#: globby/environment.py:131
+#, python-format
+msgid "%(project)s allready exists"
+msgstr "%(project)s existiert schon"
+
+#: globby/environment.py:135
+#, python-format
+msgid ""
+"#This menue file was automaticly generated for the project \"%(project)s\""
+msgstr ""
+"# Diese Datei wurde automatisch für das Projekt \"%(project)s\" erstellt"
+
+#: globby/environment.py:147
+#, python-format
+msgid "%(project)s not found"
+msgstr "%(project)s wurde nicht gefunden"
+
+#: globby/environment.py:151
+#, python-format
+msgid "%(project)s is the choosen project. You can't delete it"
+msgstr ""
+
+#: globby/markup/processors/woxt.py:376
+#, python-format
+msgid "Write additional CSS to %s"
+msgstr "Schreibe zusätzliche CSS Daten nach %s"
+
+#: globby/markup/processors/woxt.py:385
+msgid "Need \"pygments\" for highlightning"
+msgstr "Es wird \"pygments\" für das Syntaxhilightning benötigt"
+
+#: globby/markup/processors/woxt.py:437
+#, python-format
+msgid "Copy the image %(img)s to %(rendered_path)s"
+msgstr "kopiere %(img)s nach %(rendered_path)s"
+
+#: globby/utils/logger.py:59
+#, fuzzy
+msgid "The maximum of log files is arrived. I'll delete all logs!"
+msgstr ""
+"Die maximale Anzahl an Log-Dateien wurde erreicht. Es werden alle Logs gel�t!"
+
+#: globby/cli/__init__.py:75
+#, python-format
+msgid ""
+"\n"
+"usage: %s\n"
+msgstr ""
+"\n"
+"Benutzung: %s\n"
+
+#: globby/cli/__init__.py:108
+#, python-format
+msgid ""
+"\n"
+"The following %s, found by Globby:\n"
+msgstr ""
+"\n"
+"Die folgenden %s wurden von Globby gefunden:\n"
+
+#: globby/cli/__init__.py:113
+#, python-format
+msgid ""
+"\n"
+"Now fill in the number of the %s"
+msgstr ""
+"\n"
+"Bitte die nummer des %s eingeben"
+
+#: globby/cli/__init__.py:114
+msgid "To exit Globby fill in \"END\"!"
+msgstr "Um Globby zu beenden bitte \"ENDE\" eingeben"
+
+#: globby/cli/__init__.py:115
+msgid "Choice: "
+msgstr "Auswahl: "
+
+#: globby/cli/__init__.py:124 globby/cli/__init__.py:130
+#, python-format
+msgid "You choose \"%s\""
+msgstr "\"%s\" wurde ausgew�t"
+
+#: globby/cli/__init__.py:135
+#, python-format
+msgid ""
+"\n"
+"Sorry, this %s does not exist!"
+msgstr ""
+"\n"
+"%s existiert nicht!"
+
+#: globby/cli/__init__.py:136
+#, python-format
+msgid ""
+"fill in \"%(end)s\" to exit Globby \n"
+"or fill in the correct %(out_str)s\n"
+msgstr ""
+"Bitte \"%(end)s\" eingeben, um Globby zu beenden oder das %(out_str)s "
+"richtig eingeben.\n"
+
+#: globby/cli/__init__.py:138
+msgid "END"
+msgstr "ENDE"
+
+#: globby/cli/__init__.py:139
+msgid "new choice: "
+msgstr "Neue Auswahl: "
+
+#: globby/cli/__init__.py:151
+#, python-format
+msgid "The builder %r is not defined"
+msgstr ""
+
+#: globby/cli/__init__.py:155
+msgid "projects"
+msgstr "projekte"
+
+#: globby/cli/__init__.py:159
+msgid ""
+"\n"
+"You've choosen the default theme.\n"
+"If this is your choice accept with 'y' otherwise apply a 'n'."
+msgstr ""
+"\n"
+"Es wurde das Standard Design ausgew�t. Wenn dies richtig ist, so bitte mit "
+"'j' akzeptieren, andererseits bitte 'n' eingeben."
+
+#: globby/cli/__init__.py:161
+msgid "your Choice (y/n): "
+msgstr "Auswahl (j/n): "
+
+#: globby/cli/__init__.py:163
+msgid "themes"
+msgstr "themen"
+
+#~ msgid "project"
+#~ msgstr "projekt"
+
+#~ msgid "theme"
+#~ msgstr "thema"

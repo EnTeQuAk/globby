@@ -1,0 +1,104 @@
+
+body {
+    color: #000000;
+    background-color: #dcdcdc;
+    /* Einheit 'em' damit der Benutzer zoomen kann. */
+    font-size: 1em;
+}
+
+/* Heading anchors */
+.anchor:link, .anchor:visited {
+    border: none;
+    color: #89a8cf;
+    font-size: 0.8em;
+    vertical-align: text-top;
+}
+.anchor:hover {
+    color: #b4bdc9;
+}
+* > .anchor:link, * > .anchor:visited {
+    visibility: hidden;
+}
+h1:hover .anchor, h2:hover .anchor, h3:hover .anchor,
+h4:hover .anchor, h5:hover .anchor, h6:hover .anchor {
+    visibility: visible;
+    background-color: none;
+}
+
+/* source code boxes */
+
+.code {
+    margin: 5px 10px 5px 5px;
+    padding: 5px 10px;
+    border: 1px solid #336666;
+    background-color: #add8e6;
+}
+.code:hover {
+    border: 1px solid #003333;
+}
+tt {
+    border: 1px solid #808080;
+    background-color: #add8e6;
+}
+/* Navigation */
+
+#navigation {
+    float:left;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+/* Navigation section */
+#navigation pre {
+    text-align: center;
+    font-size: 1.2em;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 3px 0 5px 0;
+    background-color: #333399;
+}
+
+#navigation ul {
+    margin: 0em;
+    padding: 0em;
+    list-style-type: none;
+    list-style-position: inside;
+}
+
+#navigation li {
+    margin: 0.1em 0 0 0;
+    padding: 0 0.1em 0 0.2em;
+}
+
+#navigation a {
+    display: block;
+    color: #ffffff;
+    background-color: #333366;
+    width: 9em;
+    padding: 0.2em 1.5em 0.1em 0.6em;
+    text-decoration: none;
+}
+
+#navigation a:hover {
+    background-color: #003366;
+    color: #ffffff;
+}
+
+
+#content {
+    margin-left: 190px;
+    padding: 10px;
+    background-color: #69C;
+}
+
+#content h1, h2, h3, h4, h5, h6 {
+    border-bottom: 1px solid #dcdcdc;
+}
+
+#footer {
+    text-align: center;
+    clear: both;
+    padding: 5px;
+    margin: 5px;
+    border: 1px dotted #aaa;
+    font-size: 0.9em;
+    background-color: #add8e6;
+}

@@ -1,0 +1,71 @@
+= ToDo =
+
+== Menueparser ==
+
+ * Dateibaumstrukturen erlauben.
+
+== Syntax ==
+
+**Folgende haben niedrige Priorität**
+
+ * -~Kleinerer Text~-
+ * +~Größerer Text~+
+
+== Macros ==
+
+ * Dateien verlinken, welche dann ebenfalls nach ``rendered`` kopiert werden.
+
+== Themes ==
+
+ * Eines mit einem horizontalem Menü
+ * Eines mit einem Popup Menü
+
+
+== Sonstiges ==
+
+ * mehr Macros implementieren und dokumentieren
+ * Javascript support. Eventuell AJS und jQuery.
+
+== Dokumentation ==
+
+Zu dokumentieren sind...
+
+ * ... Log-Dateien
+ * ... Anpassen vom Aussehen einer Internetseite
+ * ... das allgemeine Template/Theme-System.
+ * ... die Globby API
+
+== grafische Benutzeroberfläche ==
+Wird im Moment in Tkinter implementiert. Die anfangs angedachte Weboberfläche wird später umgestzt.
+
+
+=== Aktueller Status: ===
+ * 30.06.2007
+Über die grafische Oberfläche können im Moment folgende Aufgaben erledigt werden:
+ * Projektverwaltung
+  * Projekt auswählen
+  * Neues Projekt erstellen
+  * Projekt löschen
+ * Editor
+  * Bestehende Datei zum Editieren auswählen
+  * Neue Datei anlegen
+  * Bearbeitete Datei speichern
+  * undo + redo
+  * Wenn eine Datei bearbeitet wurde wird dies farblich angezeigt
+  * Woxt Formatierungen können über Knöpfe eingefügt werden
+ * Theme kann ausgewählt werden 
+ 
+Folgende Probleme müssen noch gelöst werden:
+ * Tastaturkürzel müssen beim Wechsel auf ein neues Tab für eben dieses Tab aktualisiert werden.
+ * Noch keine Überprüfung, ob die zu bearbeitenden Dateien wirklich unicode enthalten
+ * Noch keine Überprüfung, ob Dateien, Ordner überhaupt vorhanden sind --> sinnvolle Fehlermeldung
+ * Menüeditor muss noch eingebunden werden
+ * Beim Einfügen der Formatierungen per Knopfdruck, ist die Cursorposition selten dort, wo man sie erwartet.
+
+
+=== Menü Editor ===
+ * läuft im Moment nur als allein stehende Applikation
+ * hat gar keine Tastaturkürzel implementiert
+ * beachtet noch nicht, die Neuerung, dass die Menüeinträge Namen unabhängig von den dazugehörigen Dateinamen haben können
+ * ist als Prototyp noch voll prozedural umgesetzt -> wird noch auf Objektorientierung umgeschrieben
+ * Verschieben eines Eintrages mit der Maus (bei gedrückter linker Maustaste) ist vertikal möglich, horizontal gibt es Probleme

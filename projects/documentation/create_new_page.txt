@@ -1,0 +1,96 @@
+= Projektseiten und das Menü =
+
+Globby bietet zur Zeit keine grafische Unterstützung zum Erstellen von neuen Seiten.
+Jedoch arbeiten wir hart an einer grafischen Oberfläche, die einem diese und mehrere andere Arbeiten abnimmt.
+
+Jedoch möchten wir hier einfach ein paar Hinweise aufschreiben, die man beachten sollte, um erfolgreich mit Globby arbeiten zu können und mehr die Stärken als Einschränkungen von Globby zu sehen.
+Denn Globby kann bei weitem mehr, als nur simpel Projekte verwalten und aus einer Markup verzierten Textdatei eine Internetseite zu basteln.
+
+Fangen wir einfach mal an. Was benötigt eine Internetseite alles.
+ * Mehrere Seiten, die den Inhalt der Internetseite repräsentieren
+ * Eine Navigation, die den Inhalt der Internetseite auflistet
+
+
+== eine Projektseite erstellen ==
+
+Wir gehen einfach mal davon aus, dass das gewünschte Projekt ``Test`` heißt und im Ordner ``/pfad/zum/projekt`` liegt.
+In diesem Ordner wird nun eine neue Textdatei erstellt, die den Namen `index.txt` bekommt.
+In diese schreiben wir einfach mal ein wenig Text hinein:
+{{{
+	Ich bin **einfacher** Text, der später auf der //Startseite// stehen wird
+}}}
+
+So. Damit sind wir schonmal einen großen Schritt weiter, zur ersten Internetseite.
+Nun fehlt noch das Menü. Globby baut sich selber ein Menü, wenn man keines vorgibt, das sollte man nie vergessen!
+
+Nun möchten wir die ``index.txt`` als Startseite für unser späteres Projekt benutzen.
+
+Dazu erstellen wir einfach mal folgende `menue.txt`, die ebenso in den Projektordner (``/pfad/zum/projekt``) liegt.
+Wir schreiben folgendes hinein:
+{{{
+index "Startseite"
+}}}
+
+Das mag jetzt eventuell verwirren. Denn, warum steht da nur ``index`` und nicht ``index.txt``?
+Das ist ganz einfach erklärt: Globby erlaubt es verschiedene Dateisuffixe für Projektdateien zu benutzen.
+Man kann über die CLI auswählen, welches Suffix man selber gerne verwenden möchte. Dementsprechend müssen auch die Dateien benannt werden.
+Das Suffix wird intern automatisch an ``index`` rangehangen, wodurch Globby selbstverständlich die Datei findet.
+Doch, was genau macht diese eine Zeile im Menü jetzt?
+
+Das erste Wort, wird **Der Link** genannt. Es ist der Verweiß, auf den Namen der Datei im Projektordner. Existiert dieser Link nicht, wird die Zeile nicht als verlinkter Menüeintrag angesehen sondern als Menüsektion.
+
+Das Wort, welches in Anführungszeichen gehüllt ist, wird **Die Beschreibung** genannt. Also wird der Menüeintrag ``Startseite`` heißen und auf die ``index.txt`` verweisen.
+
+Probieren wir das ganze einfach mal aus.
+Wir gehen zurück in den Hauptordner von Globby, der, wo die Datei ``globby.py`` liegt.
+Wir führen sie einfach mal aus:
+``python globby.py``
+
+Nun werden wir gefragt, Welches Projekt wir verarbeiten möchten. Wir wehlen in diesem Menü das Projekt ``Test`` aus.
+Es können der Name des Projektes eingegeben werden oder die führende Zahl vor dem Projektnamen.
+{{{
+The following projects, found by Globby:
+
+(1) -- documentation
+(2) -- debug
+(3) -- test
+
+Now fill in the number of the projects
+To exit Globby fill in "END"!
+Choice: 3
+}}}
+
+Haben wir das ausgeführt, so kommen wir zum nächsten Dialog, der uns direkt zur Abfrage führt, ob alles korrekt eingegeben wurde.
+Globby füllt viele Werte automatisch aus. Wir werden später sehen, wie wir die einzelnen Werte verändern können.
+Die Ausgabe sollte ungefair so aussehen:
+{{{
+Please validate all given options:
+
+     option : value
+
+     charset : utf-8
+     suffix : txt
+     pygments_style : default
+     project : test
+     syntax_processor : woxt
+     theme : default
+     accept_all : not given or set
+     debug : not given or set
+}}}
+Wir bestätigen die nächste Abfrage mit einem ``y``:
+{{{
+If all Values are correct, type "y" to generate your page
+Otherwise type "n" to abort (NOTE: it aborts on any key except "y")
+Run parser? (y|n): y
+}}}
+
+Nun bekommen wir eigentlich nur noch die Infomeldung, das alles Perfekt verlaufen ist.
+Ist dem so, schauen wir in unserem Projektverzeichnis (``/pfad/zum/projekt``) nach. Hier ist nun ein neuer Ordner ``rendered`` vorzufinden.
+In diesem befindet sich die generierte Internetseite. Wir öffnen den Ordner und schauen uns die ``index.html`` im Browser an. Das Ergebnis sollte ungefair so aussehen:
+#image[finished_page.png Fertige Seite]
+
+Wir haben nun die Grundlagen gesehen, wie man eine neue Projektseite und das entsprechende Menü erstellt.
+Für nähere Informationen zum Formatieren der einzelnen Projektseiten oder die Möglichkeit das Aussehen der erstellten Seiten zu bestimmen, siehe:
+ * [markup Markup/Formatierung]
+ * [theme_system Das Theme System]
+

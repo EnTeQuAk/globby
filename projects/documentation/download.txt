@@ -1,0 +1,16 @@
+= Herunterladen =
+Globby kann hier heruntergeladen werden:
+
+[http://svn.webshox.org/globby/trunk Globby SVN Repository]
+
+= Installieren =
+== Voraussetzungen ==
+Auf dem Rechner auf dem Globby ausgeführt werden soll muss lediglich [http://python.org Python] installiert sein.
+
+Da Globby im Moment nur via SVN verfügbar ist, wird auch [http://subversion.tigris.org Subversion] benötigt.
+Globby kann über folgenden Befehl aus dem SVN in der aktuellen Entwicklungsversion
+heruntergeladen werden:
+``svn checkout http://svn.webshox.org/globby/trunk ``
+
+Damit wird ein neuer Ordner namens ``globby`` erzeugt.
+Weiteres kann man unter //[how_to_use Wie benutze ich Globby]// lesen.

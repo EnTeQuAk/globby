@@ -1,0 +1,14 @@
+# a entry shows like
+# filename "Menue-Entry-Name"
+# NOTE: the filename WITHOUT any subfix like .txt or .html
+
+index "Index"
+"Debugfiles"
+ headline_parcour "Headline"
+ styles_parcour "Text Styles"
+ link_parcour "Link"
+ noparse_parcour "Noparse"
+ unicode_parcour "Unicode"
+ list_parcour "List"
+ macro_parcour "Macro"
+ test_pygments "Pygments Test"

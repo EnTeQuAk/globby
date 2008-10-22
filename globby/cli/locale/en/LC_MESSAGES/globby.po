@@ -1,0 +1,330 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Globby 0.2dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-08-19 17:08+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Christopher Grebs <chrissiG@gmx.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: globby.py:68
+msgid "Set the value for the name of the project"
+msgstr ""
+
+#: globby.py:78
+msgid "Set the name of the theme"
+msgstr ""
+
+#: globby.py:86
+msgid "The suffix of the files in \"globby/projects/PROJECT/\""
+msgstr ""
+
+#: globby.py:95
+msgid "Set automaticly the following vars:"
+msgstr ""
+
+#: globby.py:96
+msgid "theme: default"
+msgstr ""
+
+#: globby.py:97
+msgid "project:  debug"
+msgstr ""
+
+#: globby.py:98
+msgid "accept_all: True"
+msgstr ""
+
+#: globby.py:108
+msgid "Define the charset for the generated HTML-Files"
+msgstr ""
+
+#: globby.py:117
+msgid "Choose a markup, witch to use for rendering the project"
+msgstr ""
+
+#: globby.py:118
+msgid "(it defaults to 'woxt')"
+msgstr ""
+
+#: globby.py:119 globby.py:178
+#, python-format
+msgid "choose one of: %s"
+msgstr ""
+
+#: globby.py:126
+msgid "Choose the Builder wich generates your output."
+msgstr ""
+
+#: globby.py:127
+msgid "(it defaults to 'project2html')"
+msgstr ""
+
+#: globby.py:128
+#, python-format
+msgid "Choose one of: %s"
+msgstr ""
+
+#: globby.py:140
+msgid "accept all queries"
+msgstr ""
+
+#: globby.py:149
+msgid "set a specific language"
+msgstr ""
+
+#: globby.py:158
+msgid "show this help message and exit"
+msgstr ""
+
+#: globby.py:167
+msgid "show the program's version number and exit"
+msgstr ""
+
+#: globby.py:176
+msgid "If you're using Pygments, choose here the used style"
+msgstr ""
+
+#: globby.py:177
+msgid "(defaults to 'default')"
+msgstr ""
+
+#: globby.py:188
+msgid "python globby.py [options]"
+msgstr ""
+
+#: globby.py:210
+msgid "Please validate all given options:"
+msgstr ""
+
+#: globby.py:212
+msgid ""
+"You've entered the following options.\n"
+"Globby will use them to render the project:"
+msgstr ""
+
+#: globby.py:215
+msgid "option"
+msgstr ""
+
+#: globby.py:215
+msgid "value"
+msgstr ""
+
+#: globby.py:218
+msgid "not given or set"
+msgstr ""
+
+#: globby.py:221
+msgid ""
+"\n"
+"If all Values are correct, type \"y\" to generate your page"
+msgstr ""
+
+#: globby.py:222
+msgid "otherwise type \"n\" to abort (NOTE: it aborts on any key except \"y\")"
+msgstr ""
+
+#: globby.py:224
+msgid "Run parser? (y|n): "
+msgstr ""
+
+<<<<<<< .mine
+#: globby/environment.py:131
+=======
+#: globby/builder.py:83
+>>>>>>> .r343
+#, python-format
+<<<<<<< .mine
+msgid "%(project)s allready exists"
+msgstr ""
+
+#: globby/environment.py:135
+#, python-format
+msgid ""
+"#This menue file was automaticly generated for the project \"%(project)s\""
+msgstr ""
+
+#: globby/environment.py:147
+#, python-format
+msgid "%(project)s not found"
+msgstr ""
+
+#: globby/environment.py:151
+#, python-format
+msgid "%(project)s is the choosen project. You can't delete it"
+msgstr ""
+
+#: globby/builder.py:83
+#, python-format
+=======
+>>>>>>> .r343
+msgid "created ...%s"
+msgstr ""
+
+#: globby/builder.py:87
+#, python-format
+msgid "I'll overwrite %s"
+msgstr ""
+
+#: globby/builder.py:89
+msgid "reading CSS-Data..."
+msgstr ""
+
+#: globby/builder.py:101
+#, python-format
+msgid "reading datafile %(fn)s ..."
+msgstr ""
+
+#: globby/builder.py:110
+#, python-format
+msgid "parsing datafile %(fn)s..."
+msgstr ""
+
+#: globby/builder.py:117
+#, python-format
+msgid "rendering data with the choosen theme \"%s\""
+msgstr ""
+
+#: globby/builder.py:133
+#, python-format
+msgid "writing rendered data to %s"
+msgstr ""
+
+#: globby/builder.py:151
+msgid "write CSS-Data"
+msgstr ""
+
+#: globby/builder.py:159
+msgid ""
+"All done!\n"
+"\n"
+msgstr ""
+
+#: globby/environment.py:131
+#, python-format
+msgid "%(project)s allready exists"
+msgstr ""
+
+#: globby/environment.py:135
+#, python-format
+msgid ""
+"#This menue file was automaticly generated for the project \"%(project)s\""
+msgstr ""
+
+#: globby/environment.py:147
+#, python-format
+msgid "%(project)s not found"
+msgstr ""
+
+#: globby/environment.py:151
+#, python-format
+msgid "%(project)s is the choosen project. You can't delete it"
+msgstr ""
+
+#: globby/markup/processors/woxt.py:376
+#, python-format
+msgid "Write additional CSS to %s"
+msgstr ""
+
+#: globby/markup/processors/woxt.py:385
+msgid "Need \"pygments\" for highlightning"
+msgstr ""
+
+#: globby/markup/processors/woxt.py:437
+#, python-format
+msgid "Copy the image %(img)s to %(rendered_path)s"
+msgstr ""
+
+#: globby/utils/logger.py:59
+msgid "The maximum of log files is arrived. I'll delete all logs!"
+msgstr ""
+
+#: globby/cli/__init__.py:75
+#, python-format
+msgid ""
+"\n"
+"usage: %s\n"
+msgstr ""
+
+#: globby/cli/__init__.py:108
+#, python-format
+msgid ""
+"\n"
+"The following %s, found by Globby:\n"
+msgstr ""
+
+#: globby/cli/__init__.py:113
+#, python-format
+msgid ""
+"\n"
+"Now fill in the number of the %s"
+msgstr ""
+
+#: globby/cli/__init__.py:114
+msgid "To exit Globby fill in \"END\"!"
+msgstr ""
+
+#: globby/cli/__init__.py:115
+msgid "Choice: "
+msgstr ""
+
+#: globby/cli/__init__.py:124 globby/cli/__init__.py:130
+#, python-format
+msgid "You choose \"%s\""
+msgstr ""
+
+#: globby/cli/__init__.py:135
+#, python-format
+msgid ""
+"\n"
+"Sorry, this %s does not exist!"
+msgstr ""
+
+#: globby/cli/__init__.py:136
+#, python-format
+msgid ""
+"fill in \"%(end)s\" to exit Globby \n"
+"or fill in the correct %(out_str)s\n"
+msgstr ""
+
+#: globby/cli/__init__.py:138
+msgid "END"
+msgstr ""
+
+#: globby/cli/__init__.py:139
+msgid "new choice: "
+msgstr ""
+
+#: globby/cli/__init__.py:151
+#, python-format
+msgid "The builder %r is not defined"
+msgstr ""
+
+#: globby/cli/__init__.py:155
+msgid "projects"
+msgstr ""
+
+#: globby/cli/__init__.py:159
+msgid ""
+"\n"
+"You've choosen the default theme.\n"
+"If this is your choice accept with 'y' otherwise apply a 'n'."
+msgstr ""
+
+#: globby/cli/__init__.py:161
+msgid "your Choice (y/n): "
+msgstr ""
+
+#: globby/cli/__init__.py:163
+msgid "themes"
+msgstr ""

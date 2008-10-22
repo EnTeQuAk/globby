@@ -1,0 +1,35 @@
+= Willkommen bei Globby =
+Globby ist ein Programm, mit dem eine kleine Internetseite (Projektumfang von < 50 Seiten)
+erstellt und gewartet werden kann.
+
+Natürlich können auch größere Projekte verwirklicht werden. Hier liegt aber nicht der Schwerpunkt bei der Entwicklung.
+
+
+== Allgemeine Beschreibung ==
+
+Mit Globby wird es möglich sein, mehrere Internetseiten in Form von Projekten unabhängig von einander zu erstellen und zu warten. 
+Globby bietet ein simples System an, eine Navigationsstruktur anzulegen, das Aussehen der Internetseite durch Themes zu bearbeiten und vieles, vieles mehr.
+
+Weitere Funktionen sind natürlich auch geplant.
+
+
+== technische Beschreibung ==
+
+Globby...
+
+ * ... ist in Python geschrieben.
+ * ... ist ein Generator für statische HTML-Seiten incl. Menü
+ * ... verwendet für den Text eine einfache Wiki Syntax ([markup Markup])
+  * --> es werden auch andere Markup-Sprachen unterstützt (reStructedText, Textile und markdown)
+ * Die Seiten und das Menü selbst werden in Textdateien gespeichert (siehe [create_new_page Neue Seite erstellen])
+  * --> robust + einfach zugänglich + einfach zu sichern
+ * ... verwendet Themes zum gestalten der HTML-Ausgabe (siehe [theme_system Theme-System])
+ * Da Themes nur kleine HTML- und CSS- Dateien sind können sie sehr leicht angepasst werden.
+
+
+== Besonderheiten ==
+
+ * Keine Datenbank erforderlich (weder auf dem Rechner des Anwenders noch auf dem Webserver)
+ * Kein Webspace mit PHP, Python o.ä erforderlich da Globby statisches HTML generiert
+ * Globby kann einfach gestartet und benutzt werden.
+  * --> Einstellungen sind nicht nötig, aber größtmögliche Anpassung möglich.

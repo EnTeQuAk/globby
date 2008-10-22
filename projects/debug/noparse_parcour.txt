@@ -1,0 +1,15 @@
+{{{
+text, der nicht geparsed wird...
+__ underline __ ** bold**
+}}}
+
+{{{ **und auch net geparsed** }}}
+
+{{{ **und ebenfalls __net geparsed__
+** }}}
+
+Hervorgehobener Pythonquellcode:
+{{{#python
+print "Hallo Welt"
+import os
+}}}

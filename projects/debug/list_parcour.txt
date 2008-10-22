@@ -1,0 +1,23 @@
+ * Item 1
+   * Item 1.1
+ * Item 2
+
+ 1. Item 1
+   a. Item 1.a
+   a. Item 1.b
+      i. Item 1.b.i
+      i. Item 1.b.ii
+ 1. Item 2
+And numbered lists can also be given an explicit number:
+ 3. Item 3
+
+keine Liste mehr...
+
+ * l1
+  * l2
+  * l2
+   * l3
+    * l4
+   * l3
+  * l2
+ * l1

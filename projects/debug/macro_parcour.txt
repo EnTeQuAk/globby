@@ -1,0 +1,13 @@
+#image[lala.png]
+#image[dudud.png alt-t]
+
+escaped macro:
+!#image[dadi.png]
+
+not implemented macro:
+#macroname[argument]
+
+Kommentar:
+#comment[I am a comment!]
+
+

@@ -1,0 +1,151 @@
+= Wie benutze ich Globby (richtig) =
+
+
+
+== Herunterladen & Installieren ==
+
+Globby ist zur Zeit nur über SVN verfügbar.
+Zum Herunterladen siehe //[download Download]//.
+
+Globby so, wie es ist, braucht nicht installiert zu werden.
+Möchte man dies trotzdem, so kann man die mitgelieferte ``setup.py`` ausführen(``python setup.py install``).
+Nachdem man Globby installiert hat, ist es in den ``site-packages`` vorhanden
+und kann von anderen Scripten/Programmen als Bibliothek benutzt werden.
+
+
+
+== Benutzung per Komandozeile==
+
+Globby kann zur Zeit nur über die Komandozeile benutzt werden.
+
+Die Benutzung von Globby über die Komandozeile bietet eine ganze Reihe an Vorteile.
+Unter Anderem sind das Geschwindigkeitsvorteile, es braucht nicht die ganze
+GUI-Maschenerie zu initialisieren.
+Des weiteren kann man über die Komandozeile Argumente übergeben, um wiederkehrende Aufgaben zu beschleunigen.
+Obendrein kann man so Globby mit anderen Werkzeugen verketten / automatisieren.
+
+
+
+=== Einführung ===
+
+==== wer, wie, wo, was ist die Komandozeile? ====
+
+Die [http://de.wikipedia.org/wiki/Kommandozeile Kommandozeile] kennen viele von Windows her als "DOS Box":
+
+#image[http://upload.wikimedia.org/wikipedia/en/b/b6/StartingMsdos.png StartingMsdos.png]
+
+Also das schwarze Fenster in dem man Befehle eintippen kann (oder eben auch nicht, wenn man die Befehle nicht kennt ;-) ).
+
+
+
+===== Die Kommandozeile unter Windows =====
+
+So kann  die Kommandozeile geöffnet werden:
+[Start], ![Ausführen], //cmd// eingeben und ![Ok])
+Nun Navigiert man zu dem Ordner, wo sich Globby befindet und führt die Datei ``globby.py`` aus.
+(``python globby.py``)
+
+Unter Windows sollte es normalerweise auch möglich sein, die Datei ``globby.py`` per Doppelklick über den Windows Explorer auszuführen.
+
+
+
+===== Die Kommandozeile unter *nix =====
+
+Unter *nix Systemen, können ebenfalls die Kommandozeile und oder ein Doppelklick benutzt werden.
+Im Falle des Doppelklicks muss aber die Datei **globby.py** vorher ausführbar gemacht werden:
+{{{
+chmod +x globby.py
+}}}
+(beziehungsweise über eine entsprechend grafische Oberfläche)
+
+Nun wird man schon ganz automatisch von Globby und die Generierung des Projektes durchgeführt.
+
+
+
+==== interaktiv oder automatisch ====
+
+Es gibt zwei Möglichkeiten Globby über die Komandozeile zu bedienen:
+Im **interaktiven Modus** wird Globby ohne zusätzliche Argumente aufgerufen:
+{{{
+python globby.py
+}}}
+
+Der Benutzer wird dann gefragt, welches Projekt Globby bearbeiten soll und welches Aussehen (Theme) für die erstellten Internetseiten verwendet werden soll.
+Zum Beantworten der Fragen werden die Wahlmöglichkeiten mit aufgelistet. Die gewünschte Nummer bzw. den Namen eintippen und mit ![RETURN] bestätigen.
+Nur die letzte Frage, wird mit einem 'y' oder einem 'j' (für yes / ja) beantwortet.
+Diese Frage ist eine Zusammenfassung der getätigten Einstellungen. Die somit überprüft werden können.
+
+
+Der **automatische Modus** beruht auf der Möglichkeit Globby Komandozeilenargumente mitzugeben, die die Arbeitsweise beeinflussen können.
+
+Um Komandozeilenargumente zu benutzen müssen folgende einfach nur an ``python globby.py`` angehangen werden. (mit Leerzeichen getrennt)
+
+
+
+=== Komandozeilenargumente ===
+
+Globby bietet für sich einige Komandozeilenargumente an. Viele, um das Generieren eines Projektes zu automatisieren.
+Nützlich ist das dann wenn man gerade einen Text verfasst und zwischendurch gerne das bisher geschriebene als HTML  ansehen möchte. Dazu sagt man globby sozusagen beim Aufruf die Fragen, die sonst im interaktiven Modus gestellt werden schon vorab.
+
+
+
+==== --project ====
+
+Über das Argument ``--project``, kann ein bestehendes Projekt ausgewählt werden:
+{{{#python
+python globby.py --project=PROJEKTNAME
+}}}
+
+Oder in der Kurzform:
+{{{
+python globby.py -p PROJEKTNAME
+}}}
+
+Dadurch wird automatisch das Projekt //PROJEKTNAME// ausgewählt.
+Globby sucht Projekte in dem Ordner ``globby/projects/``.
+Im Standardmäßig werden die Projekte ``debug`` und ``documentation`` mitgeliefert, die gerne für eigene Tests genutzt werden können. Das Projekt ``documentation`` entält die offizielle Dokumentation, die wir hier gerade lesen :=)
+
+
+
+==== --template ====
+
+Globby kennt auch ein Argument, welches für die automatische Auswahl eines Themes verwendet werden kann:
+``--template=TEMPLATENAME`` beziehungsweise ``-t TEMPLATENAME``.
+
+####
+Mit diesen beiden kann man schon sehr viel steuern.
+
+Für nähere Informationen ist es nützlich die Hilfe aufzurufen:
+
+
+
+==== --help ====
+
+{{{
+python globby.py --help
+}}}
+
+Oder in Kurzform:
+{{{
+python globby.py -h
+}}}
+
+Hier werden nun sämtliche zur Verfügung stehden Argumente aufgelistet,
+welche im folgenden ebenfalls beschrieben werden.
+
+
+
+==== --accept_all ====
+
+``accept_all`` oder  ``-a`` bewirkt, dass globby nicht mehr nachfragt, ob die vorab gewählten Einstellungen richtig sind.
+
+
+
+==== Kombination mehrerer Argumente ====
+
+Der Aufruf:
+{{{
+globby.py -p documentation -t default -a
+}}}
+
+bewirkt, dass das Projekt ``documentation`` mit dem Theme ``default`` ohne weitere Nachfragen abgearbeitet wird.

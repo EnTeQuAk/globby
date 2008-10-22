@@ -1,0 +1,41 @@
+** ich bin einfacher Fett geschriebener Text **
+**ich bin das ebenfalls, aber mit einer anderen Schreibweise**
+**ich bin das auch wieder, aber auch mit einer anderen Schreibweise **
+
+** ich soll fetter text
+über mehrere Zeilen sein **
+
+
+
+
+__ ich bin einfacher unterstrichener Text __
+
+__ich bin das ebenfalls, aber mit einer anderen Schreibweise__
+
+__ich bin das auch wieder, aber auch mit einer anderen Schreibweise __
+
+__ ich soll unterstrichener text
+über mehrere Zeilen sein __
+
+
+
+// ich bin einfacher kursiv geschriebener Text //
+
+//ich bin das ebenfalls, aber mit einer anderen Schreibweise//
+
+//ich bin das auch wieder, aber auch mit einer anderen Schreibweise //
+
+// ich soll kursiver text
+über mehrere Zeilen sein //
+
+
+
+
+**fett __fett und unterstrichen__// fett und kursiv//**
+__unterstrichen **fett und unterstrichen** __
+// ** __ kursiv, unterstrichen und fetter Text __ ** //
+
+``monospaced`` Text
+^^super^^ script
+,,sub,, script
+~~ striked through ~~ text

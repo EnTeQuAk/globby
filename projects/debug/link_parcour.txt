@@ -1,0 +1,11 @@
+Simpler Link, ohne Alt-Text (es sollte der Link http://webshox.org dastehen):
+
+[http://webshox.org]
+
+Link mit Alt-Text:
+
+[http://webshox.org websHoX.org Homepage]
+
+
+Interner Link:
+[index Indexpage]
