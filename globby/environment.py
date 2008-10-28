@@ -16,9 +16,9 @@ import os
 from os.path import join, abspath, isdir, isfile, getmtime, exists
 from tempfile import gettempdir
 from threading import local, Lock
-from jinja.loaders import BaseLoader, CachedLoaderMixin
-from jinja.exceptions import TemplateNotFound
-from jinja import Environment as JinjaEnvironment
+from jinja2 import Environment as JinjaEnvironment
+from jinja2.loaders import FileSystemLoader
+from jinja2.exceptions import TemplateNotFound
 import globby
 from globby.utils.text import read_file, write_file
 from globby.exceptions import ProjectExists, ProjectNotFound, IsCurrentProject
@@ -223,7 +223,7 @@ class ProjectEnvironment(object):
         return rv
 
 
-class ThemeEnvironment(CachedLoaderMixin, BaseLoader):
+class ThemeEnvironment(FileSystemLoader):
     """
     The `ThemeEnvironment` provides serveral fuctions
     to work with globby themes.
@@ -239,15 +239,6 @@ class ThemeEnvironment(CachedLoaderMixin, BaseLoader):
         self.name = theme_name
         self.themes_dir_name = themes_dir_name
         self.suffix = suffix
-
-        #XXX: let it be configurable
-        CachedLoaderMixin.__init__(self,
-            True,         # use memory caching
-            5,            # for up to 5 templates
-            gettempdir(), # additionally save the compiled templates in the
-                          # temporary dir. (/tmp on *nix, C:\Temp on Windows)
-            True,         # And reload cached temps automatically if changed
-        )
 
         # some caches, so that we don't have to watch
         # the directorys for all projects or files
@@ -285,28 +276,24 @@ class ThemeEnvironment(CachedLoaderMixin, BaseLoader):
         self._all_themes_cache = names
         return names
 
-    def get_source(self, jinja_environment, name, parent):
+    def get_source(self, jinja_environment, name):
         """
         return the source of the template named `name`
 
         used by Jinja
         """
+        def check_source_changed():
+            mtime = getmtime(filename)
+            try:
+                return getmtime(filename) == mtime
+            except OSError:
+                return False
+
         filename = join(self.path, name)
         if not exists(filename):
             raise TemplateNotFound(name)
-        return read_file(filename, jinja_environment.template_charset)
-
-    def check_source_changed(self, environment, name):
-        """
-        Check if the template is different from the cached
-        one
-
-        used by Jinja
-        """
-        fn = join(self.path, name)
-        if exists(fn):
-            return getmtime(fn)
-        return -1
+        contents = read_file(filename)
+        return contents, filename, check_source_changed
 
 
 class Environment(object):
@@ -385,7 +372,7 @@ class Environment(object):
         self.__init__(main_path, **std_args)
 
     def load_template(self, template):
-        return self.jinja_env._loader.load(template)
+        return self.jinja_env.loader.load(self.jinja_env, template)
 
     def parse_template(self, template, ctx=None):
         """
@@ -395,7 +382,7 @@ class Environment(object):
         if isinstance(template, basestring):
             tmpl = self.load_template(template)
         else:
-            from jinja.exceptions import TemplateError
+            from jinja2.exceptions import TemplateError
             raise TemplateError("can't render the given Template")
         return tmpl.render(ctx)
 

@@ -89,9 +89,9 @@ class _ModuleProxy(object):
             return getattr(module, name)
 
     def __setattr__(self, name, value):
-       try:
+        try:
             setattr(self._module, name, value)
-       except AttributeError:
+        except AttributeError:
             if self._module is not None:
                 raise
 
