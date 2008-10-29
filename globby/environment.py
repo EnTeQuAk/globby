@@ -20,49 +20,13 @@ from jinja2 import Environment as JinjaEnvironment
 from jinja2.loaders import FileSystemLoader
 from jinja2.exceptions import TemplateNotFound
 import globby
+from globby import Unit
 from globby.utils.text import read_file, write_file
 from globby.exceptions import ProjectExists, ProjectNotFound, IsCurrentProject
 
 
 FORBITTEN_PROJECT_THEMES_NAMES = ['.svn']
 FORBITTEN_ENDSWITHES = ['~', '.bak']
-
-#: helds all the thread local variables
-#: currently those are:
-#:
-#: `env`:
-#:      reference to the environment in the current thread
-_locals = local()
-
-#: the lock for the evironment setup
-_setup_lock = Lock()
-
-def setup_env(main_path, bind_to_thread=False, **std_args):
-    """
-    This returns a new Environment instance.
-
-    Also the Environment class will be added to the
-    _locals variable.
-
-    If ``bind_to_thread`` is set to True the Environment will
-    be set in this thread.
-    """
-
-    _setup_lock.acquire()
-    try:
-        # make sure this thread has access to the variable so just set
-        # up a partial class and call __init__ later.
-        _locals.env = env = object.__new__(Environment)
-        env.__init__(main_path, **std_args)
-    finally:
-        # if there was no error when setting up the Environment instance
-        # we should now have an attribute here to delete
-        if hasattr(_locals, 'env') and not bind_to_thread:
-            del _locals.env
-        _setup_lock.release()
-    return env
-
-from globby import api
 
 
 class ProjectEnvironment(object):
@@ -333,7 +297,7 @@ class Environment(object):
         self.pygments_style = self.std_args.get('pygments_style', 'default')
 
         self.builder_dct = dict(
-            [(x.name, x) for x in api.get_all_units(globby.builder.Builder)]
+            [(x.name, x) for x in Unit.get_all(globby.builder.Builder)]
         )
         self.builder = self.builder_dct[
             self.std_args.get('builder', 'project2html')

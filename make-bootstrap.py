@@ -26,6 +26,7 @@ def easy_install(package, home_dir, optional_args=None):
 def after_install(options, home_dir):
     easy_install('Jinja2', home_dir)
     easy_install('Pygments', home_dir)
+    #easy_install('DMLT', home_dir)
 """
 
 def main():

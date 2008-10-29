@@ -66,6 +66,18 @@ class Unit(object):
     def __init__(self, env):
         self.env = env
 
+    @classmethod
+    def get_all(cls, type):
+        """return a generator of all units inherits from `type`"""
+        if hasattr(type, '__metaclass__'):
+            mcls = type.__metaclass__
+            dct = mcls.unit2sub
+            name = type.__name__
+            if name in dct:
+                for unit in dct[name].values():
+                    yield unit
+
+
 # Lazy loading
 # ------------
 
@@ -88,21 +100,7 @@ class _ModuleProxy(object):
             globals()[self._module_name] = module
             return getattr(module, name)
 
-    def __setattr__(self, name, value):
-        try:
-            setattr(self._module, name, value)
-        except AttributeError:
-            if self._module is not None:
-                raise
 
-            import_name = 'globby.%s' % self._module_name
-            __import__(import_name)
-            module = sys.modules[import_name]
-            globals()[self._module_name] = module
-            setattr(module, name, value)
-
-#XXX: complete this list
-api = _ModuleProxy('api')
 builder = _ModuleProxy('builder')
 environment = _ModuleProxy('environment')
 template = _ModuleProxy('template')

@@ -13,11 +13,12 @@ except ImportError:
     PYGMENTS_IMPORTED = False
 
 import globby
-from globby.api import setup_env, get_all_units
+from globby import Unit
 from globby.builder import Builder
 from globby.cli import do_validate_opts, OptionHelpFormatter
 from globby.cli.colors import nocolor, underline
 from globby.markup import get_all_processors
+from globby.environment import Environment
 
 
 # The I18N factory
@@ -126,7 +127,7 @@ CLI_OPTION_LIST = [
             help = (N_('Choose the Builder wich generates your output.'),
                     N_('(it defaults to \'project2html\')'),
                     N_('Choose one of: %s') % ', '.join(
-                    [x.name for x in get_all_units(Builder)]
+                    [x.name for x in Unit.get_all(Builder)]
                     )),
         ),
         Option(
@@ -200,7 +201,7 @@ def parse_cli(env):
 
 def main():
     t_1 = time.time()
-    env = setup_env(main_path)
+    env = Environment(main_path)
     cl_opts, args = parse_cli(env)
     env.init(**cl_opts)
     if sys.platform[:3] == 'win':
