@@ -26,6 +26,7 @@ clean-files:
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 	find . -name '*.log' -exec rm -f {} +
+	find . -name '*.orig' -exec rm -f {} +
 
 reindent:
 	@echo "running reindent.py"
