@@ -6,18 +6,18 @@
 
     This module provides the `woxt` Markup-Syntax.
 
-    :copyright: 2006-2007 by Christopher Grebs.
+    :copyright: 2006-2008 by Christopher Grebs.
     :license: GNU GPL, see LICENSE for more details.
 """
 
 import re, os
 from os.path import join
 
+from dmlt.machine import MarkupMachine, Directive, RawDirective, \
+                         rule, bygroups
+from dmlt.utils import parse_child_nodes
+from globby.markup.processors.woxt import nodes
 from globby.markup import BaseProcessor
-from globby.markup.lexer import RegexLexer
-from globby.markup.parser import TokenStreamParser
-from globby.markup.datastructure import MarkupToken as Token
-from globby.markup.datastructure import ParsedData
 from globby.utils.html import escape_html, plaintext
 from globby.utils.text import strip_ext
 
@@ -49,6 +49,72 @@ try:
 except ImportError:
     PYGMENTS_INSTALLED = False
 
+
+
+
+class TextDirective(RawDirective):
+    name = 'text'
+
+    def parse(self, stream):
+        return nodes.Text(stream.expect('text').value)
+
+
+class SimpleMarkupDirective(Directive):
+    __directive_node__ = None
+
+    def parse(self, stream):
+        dn = self.rule.enter
+        begin, end = '%s_begin' % dn, '%s_end' % dn
+        stream.expect(begin)
+        children = parse_child_nodes(stream, self, end)
+        stream.expect(end)
+        return self.__directive_node__(children)
+
+
+class EmphasizedDirective(SimpleMarkupDirective):
+    __directive_node__ = nodes.Emphasized
+    rule = rule(r"''", enter='emphasized')
+
+
+class StrongDirective(SimpleMarkupDirective):
+    __directive_node__ = nodes.Strong
+    rule = rule(r'\*\*', enter='strong')
+
+
+class UnderlineDirective(SimpleMarkupDirective):
+    __directive_node__ = nodes.Underline
+    rule = rule(r'__', enter='underline')
+
+
+class SubscriptDirective(SimpleMarkupDirective):
+    __directive_node__ = nodes.Sub
+    rule = rule(r',,\(|\),,', enter='sub')
+
+
+class SuperscriptDirective(SimpleMarkupDirective):
+    __directive_node__ = nodes.Sup
+    rule = rule(r'\^\^\(|\)\^\^', enter='sup')
+
+
+class BigDirective(SimpleMarkupDirective):
+    __directive_node__ = nodes.Big
+    rule = rule(r'\+~\(|\)~\+', enter='big')
+
+
+class SmallDirective(SimpleMarkupDirective):
+    __directive_node__ = nodes.Small
+    rule = rule(r'-~\(|\)~-', enter='small')
+
+
+class WoxtMarkupMachine(MarkupMachine):
+    directives = [EmphasizedDirective, StrongDirective, UnderlineDirective,
+                  SubscriptDirective, SuperscriptDirective, BigDirective,
+                  SmallDirective]
+    special_directives = [TextDirective]
+
+
+
+'''
 
 def list_filter(stream):
     """
@@ -576,34 +642,19 @@ class WoxtProcessor(BaseProcessor):
         lexer = WoxtLexer(text)
         parser = WoxtParser(self.env, lexer)
         return parser.get_output()
-
+'''
 
 if __name__ == '__main__':
-    html = u'''
-{{{
-**bold __ underline __ //italic// **
-+~upper+~
+    text = u'''
+Just some \\''cool\\'' new paragraph.
 
-== Headline ==
-==== Headline ==== # anchor
-
-#macroname[argument]
-
-[http://iamalink.xy alt text]
-
-{{{
-   that is a simple code block
-}}}
-
- * List
-   * List
- * List
-
-#######
-}}}'''
-    for token in WoxtLexer(html).tokenize():
-        print token
-    from globby import Environment
-    env = Environment('../')
-    pr = WoxtProcessor(env)
-    print pr.to_html(html)
+escaped: \\\\\\
+emphasized: ''text''
+strong: **text**
+underline: __underline__
+subscript: ,,(subscript),,
+superscript: ^^(Super!)^^
+big: +~(big)~+
+small: -~(small)~-
+'''
+    print WoxtMarkupMachine(text).render(enable_escaping=True)
